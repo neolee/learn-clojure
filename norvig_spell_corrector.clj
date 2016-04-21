@@ -1,5 +1,4 @@
 ; Norvig’s Spelling Corrector in Clojure
-; http://en.wikibooks.org/wiki/Clojure_Programming#Examples
 
 (defn words [text] (re-seq #"[a-z]+" (. text (toLowerCase))))
 
@@ -10,7 +9,8 @@
 (def *nwords* (train (words (slurp "big.txt"))))
 
 (defn edits1 [word]
-  (let [alphabet "abcdefghijklmnopqrstuvwxyz", n (count word)]
+  (let [alphabet "abcdefghijklmnopqrstuvwxyz"
+        n (count word)]
     (distinct (concat
 	       (for [i (range n)] (str (subs word 0 i) (subs word (inc i))))
 	       (for [i (range (dec n))]
