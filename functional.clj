@@ -79,9 +79,9 @@
 (map #(* 5 %) [1 2 3 4 5])
 ; (5 10 15 20 25)
 
-user> (def quintuple (partial * 5))
+(def quintuple (partial * 5))
 ; #'user/quintuple
-user> (map quintuple [1 2 3 4 5])
+(map quintuple [1 2 3 4 5])
 ; (5 10 15 20 25)
 
 ; Lazy evaluation
@@ -105,4 +105,3 @@ user> (map quintuple [1 2 3 4 5])
 (time (doall (t5)))
 ; "Elapsed time: 0.046 msecs"
 ; (0 10 20 30 40)
-
