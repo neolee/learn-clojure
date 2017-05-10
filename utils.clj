@@ -2,7 +2,7 @@
 (defn combinations
   [& cs]
   (reduce (fn [vs c] (mapcat #(map conj vs (repeat %)) c)) [[]] cs))
- 
+
 (defn divisible?
   [n d]
   (zero? (rem n d)))
@@ -26,24 +26,24 @@
      (apply sorted-set (map #(Integer. %) (range 1 (inc (count (str n))))))))
 
 ;; Fast power calculating
-(defn pow[number expt] (.pow (bigint number) expt))
+(defn pow[number expt] (.pow (bigdec number) expt))
 
 ;; Lazy sequence of all primes
 (defn- wheel2357 [] (cycle [2 4 2 4 6 2 6 4 2 4 6 6 2 6 4 2 6 4 6 8 4 2 4 2 4 8
 			    6 4 6 2 4 6 2 6 6 4 2 4 6 2 6 4 2 4 2 10 2 10]))
 
 (defn- spin [l n] (lazy-seq (cons n (spin (rest l) (+ n (first l))))))
- 
+
 (defn- insert-prime [p xs table]
   (update-in table [(* p p)] #(conj % (map (fn [n] (* n p)) xs))))
- 
+
 (defn- reinsert [table x table-x]
   (loop [m (dissoc table x), elems table-x]
     (if-let [elems (seq elems)]
       (let [elem (first elems)]
 	(recur (update-in m [(first elem)] #(conj % (rest elem))) (rest elems)))
       m)))
- 
+
 (defn- adjust [x table]
   (let [nextTable (first table),
 	n (nextTable 0)]
@@ -58,7 +58,7 @@
       (if (> nextComposite x)
 	(lazy-seq (cons x (sieve-helper xs (insert-prime x xs table))))
 	(recur xs (adjust x table))))))
- 
+
 (defn- sieve [s]
   (when-let [ss (seq s)]
     (let [x (first ss), xs (rest ss)]
