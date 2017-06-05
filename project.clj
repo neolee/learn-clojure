@@ -9,5 +9,4 @@
                  [org.clojure/math.combinatorics "0.1.4"]
                  [org.clojure/math.numeric-tower "0.0.4"]
                  ]
-  :plugins [[lein-clean-m2 "0.1.2"]]
   :jvm-opts ["-Xmx1g"])
