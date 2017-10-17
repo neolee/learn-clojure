@@ -69,9 +69,15 @@
 (let [a (dge 4 4 [1 0 0 0
                   2 0 0 0
                   0 1 0 0
+                  0 0 1 0])]
+  (svd a))
+
+(let [a (dge 4 4 [1 0 0 0
+                  2 0 0 0
+                  0 1 0 0
                   0 0 1 0])
-      s (dv 4)
-      superb (dv 4)]
+      s (dgd 4)
+      superb (dgd 4)]
   (svd! a s superb)
   s)
 
