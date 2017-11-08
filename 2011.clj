@@ -12,7 +12,7 @@
   (= n (smallest-prime-factor n)))
 
 (def primes (lazy-cat '(2 3)
-		      (filter prime? (take-nth 2 (iterate inc 5)))))
+                      (filter prime? (take-nth 2 (iterate inc 5)))))
 
 (defn eleven_primes_start_with [n]
   (take 11 (for [m primes :when (>= m n)] m)))
