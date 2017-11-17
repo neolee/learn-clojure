@@ -7,8 +7,8 @@
    before the value of z (using the components `a` and `b`) could
    be determined to have escaped the Mandelbrot set.  If z
    will not escape, -1 is returned."
-  [a0 b0 depth]                                         
-  (loop [a a0                                       
+  [a0 b0 depth]
+  (loop [a a0
          b b0
          iteration 0]
     (cond
@@ -36,7 +36,7 @@
   "Calculates membership within and number of iterations to escape
    from the Mandelbrot set for the region defined by `rmin`, `rmax`
    `imin` and `imax` (real and imaginary components of z, respectively).
-   
+
    Optional kwargs include `:depth` (maximum number of iterations
    to calculate escape of a point from the set), `:height` ('pixel'
    height of the rendering), and `:width` ('pixel' width of the
@@ -49,7 +49,7 @@
    Mandelbrot set visualizations."
   [rmin rmax imin imax & {:keys [width height depth]
                           :or {width 80 height 40 depth 1000}}]
-  (let [rmin (double rmin)                                              
+  (let [rmin (double rmin)
         imin (double imin)
         stride-w (/ (- rmax rmin) width)
         stride-h (/ (- imax imin) height)]
@@ -60,7 +60,7 @@
         (if (zero? y)
           (partition width escapes)
           (recur 0 (dec y) escapes))
-        (recur (inc x) y (conj escapes (escape (+ rmin (* x stride-w))  
+        (recur (inc x) y (conj escapes (escape (+ rmin (* x stride-w))
                                                (+ imin (* y stride-h))
                                                depth)))))))
 
