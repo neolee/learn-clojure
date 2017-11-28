@@ -8,7 +8,7 @@
                  [ch.qos.logback/logback-classic "1.2.3"]
                  [org.apache.commons/commons-math3 "3.6.1"]
                  [uncomplicate/neanderthal "0.16.1"]
-                 ; [uncomplicate/neanderthal "0.17.0"]
+                 ; [uncomplicate/neanderthal "0.17.1"]
                  [org.clojure/math.combinatorics "0.1.4"]
                  [org.clojure/math.numeric-tower "0.0.4"]
                  ]
