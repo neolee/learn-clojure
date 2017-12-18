@@ -5,9 +5,6 @@
            [linalg :refer :all]
            [native :refer :all]
            [opencl :refer :all]])
-(require '[uncomplicate.clojurecl
-           [core :refer :all]
-           [legacy :refer [with-default-1 command-queue-1]]])
 
 ; Vectors, addition and scalar multiplication
 (def v1 (dv -1 2 5.2 0))
@@ -85,22 +82,3 @@
 (let [v (dv 6 7)
       u (dv 1 4)]
   (scal (/ (dot u v) (dot u u)) u))
-
-; Hello GPU (through OpenCL 1.2)
-(with-default-1
-  (with-default-engine
-    (with-release [gpu-x (clv (range 100000))
-                   gpu-y (copy gpu-x)]
-      (dot gpu-x gpu-y))))
-; Native method as comparison
-(let [x (dv (range 100000))
-      y (copy x)]
-  (dot x y))
-; More thorough configuraion
-(with-platform (first (platforms))
-  (let [dev (first (sort-by-cl-version (devices :gpu)))]
-    (with-context (context [dev])
-      (with-queue (command-queue-1 dev)
-        (with-default-engine
-          (with-release [gpu-x (clv 1 -2 5)]
-            (asum gpu-x)))))))
