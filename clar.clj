@@ -3,8 +3,7 @@
 (require '[uncomplicate.neanderthal
            [core :refer :all]
            [linalg :refer :all]
-           [native :refer :all]
-           [opencl :refer :all]])
+           [native :refer :all]])
 
 ; Vectors, addition and scalar multiplication
 (def v1 (dv -1 2 5.2 0))
