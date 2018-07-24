@@ -8,6 +8,15 @@
           (div? n d) d
           true (recur n (inc d)))))
 
+(defn prime-factors [number]
+  (loop [x 1 result [] a number]
+    (if (or (= x a) (= a 1))
+      result
+      (let [x1 (smallest-prime-factor a)]
+        (recur x1
+               (conj result x1)
+               (/ a x1))))))
+
 (defn prime? [n]
   (= n (smallest-prime-factor n)))
 
@@ -20,5 +29,3 @@
 (def eleven_primes (map eleven_primes_start_with primes))
 (def eleven_primes_sums (map #(reduce + %) eleven_primes))
 (def magic_primes (for [n eleven_primes_sums :when (prime? n)] n))
-
-(println (nth magic_primes 1000))
