@@ -12,10 +12,10 @@
   (loop [x 1 result [] a number]
     (if (or (= x a) (= a 1))
       result
-      (let [x1 (smallest-prime-factor a)]
-        (recur x1
-               (conj result x1)
-               (/ a x1))))))
+      (let [y (smallest-prime-factor a)]
+        (recur y
+               (conj result y)
+               (/ a y))))))
 
 (defn prime? [n]
   (= n (smallest-prime-factor n)))
