@@ -4,10 +4,10 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.10.1"]
-                 [org.clojure/tools.logging "0.5.0"]
+                 [org.clojure/tools.logging "0.6.0"]
                  [ch.qos.logback/logback-classic "1.3.0-alpha4"]
                  [org.apache.commons/commons-math3 "3.6.1"]
-                 [uncomplicate/neanderthal "0.26.1" :exclusions [org.jcuda/jcuda-natives
+                 [uncomplicate/neanderthal "0.27.0" :exclusions [org.jcuda/jcuda-natives
                                                                  org.jcuda/jcublas-natives]]
                  [org.clojure/math.combinatorics "0.1.6"]
                  [org.clojure/math.numeric-tower "0.0.4"]
