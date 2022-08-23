@@ -6,7 +6,7 @@
     (cond (> d (int (Math/sqrt number))) n
           (= n d) n
           (div? n d) d
-          true (recur n (inc d)))))
+          :else (recur n (inc d)))))
 
 (defn prime-factors [number]
   (loop [x 1 result [] a number]
