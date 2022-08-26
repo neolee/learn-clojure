@@ -5,6 +5,9 @@ local
 
 .DS_Store
 
+.lsp
 .nrepl-port
 .lein-repl-history
+.clj-kondo
+
 target

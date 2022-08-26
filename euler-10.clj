@@ -35,4 +35,3 @@
          s (sieve2 limit)]
      (reduce #(+ %1 (if (s %2) %2 0))
              0 (range limit)))))
-
