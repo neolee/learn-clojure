@@ -30,5 +30,5 @@
 (def eleven_primes_sums (map #(reduce + %) eleven_primes))
 (def magic_primes (for [n eleven_primes_sums :when (prime? n)] n))
 
-(prime-factors 917263871263)
+(prime-factors 99128363871263)
 (take 10 (drop 10 magic_primes))
