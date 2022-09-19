@@ -12,13 +12,13 @@
 
 (defn count-of-primes [limit]
   (let [s (sieve limit)]
-     (reduce #(+ %1 (if (s %2) 1 0))
-             0 (range limit))))
+    (reduce #(+ %1 (if (s %2) 1 0))
+            0 (range limit))))
 
 (defn sum-of-primes [limit]
   (let [s (sieve limit)]
-     (reduce #(+ %1 (if (s %2) %2 0))
-             0 (range limit))))
+    (reduce #(+ %1 (if (s %2) %2 0))
+            0 (range limit))))
 
 (defn main []
   (time
