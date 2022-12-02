@@ -5,7 +5,7 @@
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.11.1"]
                  [org.clojure/tools.logging "1.2.4"]
-                 [ch.qos.logback/logback-classic "1.4.4"]
+                 [ch.qos.logback/logback-classic "1.4.5"]
                  [org.apache.commons/commons-math3 "3.6.1"]
                  [uncomplicate/neanderthal "0.45.0" :exclusions [org.jcuda/jcuda-natives
                                                                  org.jcuda/jcublas-natives]]
