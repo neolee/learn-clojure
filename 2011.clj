@@ -10,7 +10,7 @@
 
 (defn prime-factors [number]
   (loop [x 1 result [] a number]
-    (if (or (= x a) (= a 1))
+    (if (or (> x a) (= a 1))
       result
       (let [y (smallest-prime-factor a)]
         (recur y
