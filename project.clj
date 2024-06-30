@@ -3,13 +3,13 @@
   :url "http://paradigmx.net/clojure"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
-  :dependencies [[org.clojure/clojure "1.11.1"]
-                 [org.clojure/tools.logging "1.2.4"]
-                 [ch.qos.logback/logback-classic "1.4.14"]
+  :dependencies [[org.clojure/clojure "1.11.3"]
+                 [org.clojure/tools.logging "1.3.0"]
+                 [ch.qos.logback/logback-classic "1.5.6"]
                  [org.apache.commons/commons-math3 "3.6.1"]
-                 [uncomplicate/neanderthal "0.46.0" :exclusions [org.jcuda/jcuda-natives
+                 [uncomplicate/neanderthal "0.49.1" :exclusions [org.jcuda/jcuda-natives
                                                                  org.jcuda/jcublas-natives]]
-                 [org.clojure/math.combinatorics "0.2.0"]
-                 [org.clojure/math.numeric-tower "0.0.5"]
+                 [org.clojure/math.combinatorics "0.3.0"]
+                 [org.clojure/math.numeric-tower "0.1.0"]
                  ]
   :resource-paths ["resources"])
